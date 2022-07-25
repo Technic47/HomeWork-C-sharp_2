@@ -23,13 +23,16 @@ if (enter)
     }
     else
     {
+        int index = 0;
+        //Console.WriteLine($"Count is: {count}");
         int[] array = new int[count];
 
-        for (int i = 0; i < array.Length; i++) //putting ost to array[index]
+        while (index < array.Length) //putting ost to array[index]
         {
             ost = number % 10;
             number = number / 10;
-            array[i] = ost;
+            array[index] = ost;
+            index++;
         }
         Console.WriteLine("Third number is: ");
         Console.WriteLine(array[array.Length - 3]); //array[-3] doesn`t work((
