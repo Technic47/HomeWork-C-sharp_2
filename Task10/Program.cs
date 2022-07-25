@@ -7,6 +7,7 @@ string userenter = Console.ReadLine();
 bool enter = int.TryParse(userenter, out number);
 if (enter)
 {
+    int count = 0;
     int size = number % 10;
     int index = 0;
     while (size > 1)
@@ -14,14 +15,12 @@ if (enter)
         size = number % 10;
         number = number / 10;
         array[index] = size;
-        //Console.Write($"{array[index]} ");
         index++;
-        //Console.Write($"{size} ");
-        //Console.Write($"{number} ");
-    
+        count++;
+        Console.WriteLine(count);
     }
-Console.WriteLine("Second number is: ");
-Console.WriteLine(array[1]);
+//Console.WriteLine("Second number is: ");
+//Console.WriteLine(array[3]);
     
 }
 if (!enter)
