@@ -1,5 +1,4 @@
 ﻿int number = 0;
-int[] array = {0,0,0,0,0,0};
 
 Console.WriteLine("Enter number: ");
 string userenter = Console.ReadLine();
@@ -8,19 +7,35 @@ bool enter = int.TryParse(userenter, out number);
 if (enter)
 {
     int count = 0;
-    int size = number % 10;
-    int index = 0;
-    while (size > 1)
+    int number1 = number;
+    int ost = 1;
+    while (ost != 0)
     {
-        size = number % 10;
-        number = number / 10;
-        array[index] = size;
-        index++;
+        //Console.Write($"{number1} ");
+        number1 = number1 / 10;
+        ost = number1 % 10;
         count++;
-        Console.WriteLine(count);
+        //Console.WriteLine(count);
     }
-//Console.WriteLine("Second number is: ");
-//Console.WriteLine(array[3]);
+
+    int index = 0;
+    Console.WriteLine($"Count is: {count}");
+    int[] array = new int[count];
+
+    while (index < array.Length)
+    {
+        //Console.Write($"{number} ");
+        ost = number % 10;
+        number = number / 10;
+        
+        //Console.Write(ost);
+        array[index] = ost;
+        Console.Write(array[index]);
+        index++;
+    }
+
+Console.WriteLine("Second number is: ");
+Console.WriteLine(array[array.Length - 2]);
     
 }
 if (!enter)
